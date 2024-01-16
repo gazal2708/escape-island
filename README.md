@@ -50,4 +50,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-Deployed application link: [https://master--astonishing-figolla-c38216.netlify.app/](Escape_The_Island_Game)
+Deployed application link: [Escape_The_Island](https://master--astonishing-figolla-c38216.netlify.app/)
