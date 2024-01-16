@@ -83,9 +83,9 @@ const handleDrag = (event, itemName) => {
           The cryptic nature of the message suggests that more lies beneath the surface. A spark of curiosity ignites within you as you ponder the meaning. It's a puzzle, a riddle waiting to be solved.
         </p>
         <div className='center'>
-        <a href="#" style={{color: 'white'}}onClick={handleOpenHintPopup}>
+        <button className="open-hint-button" style={{color: 'white'}} onClick={handleOpenHintPopup}>
         Show Hint
-        </a>
+        </button>
         </div>
         {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
 

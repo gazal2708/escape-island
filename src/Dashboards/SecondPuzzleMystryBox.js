@@ -200,9 +200,11 @@ console.log(isOverlayOpen)
           />
         ))}
               </div>
-              <a href="#" onClick={handleOpenHintPopup}>
+              <div className='center'>
+        <button className="open-hint-button" style={{color: 'black'}} onClick={handleOpenHintPopup}>
         Show Hint
-      </a>
+        </button>
+        </div>
       {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
 
         <button type="submit" className="pin-submit-button" onClick={handleSubmit}>Submit</button>

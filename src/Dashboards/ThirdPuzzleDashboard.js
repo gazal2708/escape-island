@@ -15,7 +15,7 @@ const [isWrongInput, setWrongInput] = useState(false);
 const [wordInput, setWordInput] = useState('');
 const [isFinalScreen, setFinalScreen] = useState(false)
 const [isScoreBoardOpen, setScoreBoardOpen] = useState(false)
-const { score, increaseScore, resetScore, usedHint, resetPuzzleHint, puzzleHint } = useScore();
+const { score, increaseScore, resetScore, resetPuzzleHint, puzzleHint } = useScore();
 const { hints } = useHint();
 const [isHintPopupOpen, setHintPopupOpen] = useState(false);
 const [isShaking, setShaking] = useState(false);
@@ -191,9 +191,9 @@ const handleScoreBoardSubmit = (e) => {
           />
           </div>
           <div className='center'>
-          <a href="#" onClick={handleOpenHintPopup}>
+        <button className="open-hint-button" style={{color: 'black'}} onClick={handleOpenHintPopup}>
         Show Hint
-        </a>
+        </button>
         </div>
         {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
         <button type="submit" className="pin-submit-button" onClick={handleSubmit}>Submit</button>
