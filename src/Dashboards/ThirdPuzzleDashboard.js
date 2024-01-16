@@ -20,12 +20,18 @@ const { hints } = useHint();
 const [isHintPopupOpen, setHintPopupOpen] = useState(false);
 const [isShaking, setShaking] = useState(false);
 const currentHint = hints[puzzleId] || '';
+let hintButton = new Audio('/hint_click.mp3')
+let audioButton = new Audio('/button_click.mp3')
+let popopOpen = new Audio('/popup.mp3')
+
 const handleOpenHintPopup = (e) => {
+  hintButton.play()
   setHintPopupOpen(true);
   puzzleHint()
 };
 
 const handleCloseHintPopup = (e) => {
+  hintButton.play()
   setHintPopupOpen(false);
 };
   const navigate = useNavigate();
@@ -48,7 +54,12 @@ const handleCloseHintPopup = (e) => {
     return () => clearTimeout(overlayTimeoutId);
   }, [isLoaded]);
 
+    if (isOverlayOpen){
+      popopOpen.play()
+    }
+  
   const handleCaveExplore = (e) => {
+    popopOpen.play()
     setWallOpen(true)
     setBoatOverlayOpen(false)
   }
@@ -66,7 +77,7 @@ const handleCloseHintPopup = (e) => {
 
     if (isClickWithinBoatRegion(x, y)) {
       setLoaded(true)
-
+      popopOpen.play()
       setBoatOverlayOpen(true);
     }
   };
@@ -74,6 +85,7 @@ const handleCloseHintPopup = (e) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
+    audioButton.play()
     if(wordInput === correctMessage){
         increaseScore();
         console.log("3", score)
@@ -101,26 +113,31 @@ const handleSubmit = (e) => {
     return x >= regionLeft && x <= regionRight && y >= regionTop && y <= regionBottom;
   };
   const closeBoatOverlay = () => {
+    hintButton.play()
     setBoatOverlayOpen(false)
     setLoaded(true)
   };
 
   const closeWallOverlay = () => {
+    hintButton.play()
     setWallOpen(false)
     setLoaded(true)
   };
 
   const closeOverlay = () => {
+    hintButton.play()
     setOverlayOpen(false);
   };
 
   const handleScoreSubmit = (e) => {
     e.preventDefault();
+    audioButton.play()
     setScoreBoardOpen(true)
     setFinalScreen(false)
 }
 
 const handleScoreBoardSubmit = (e) => {
+  audioButton.play()
     navigate('/')
     resetScore()
 }   

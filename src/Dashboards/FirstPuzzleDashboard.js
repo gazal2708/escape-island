@@ -23,13 +23,17 @@ const { hints } = useHint();
 const currentHint = hints[puzzleId] || '';
 const dispatch = useDispatch();
 const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
+let hintButton = new Audio('/hint_click.mp3')
+let popopOpen = new Audio('/popup.mp3')
 
 const handleOpenHintPopup = (e) => {
+  hintButton.play()
   dispatch(setHintPopupStatus(true));
   puzzleHint()
 };
 
 const handleCloseHintPopup = (e) => {
+  hintButton.play()
   dispatch(setHintPopupStatus(false));
 };
 
@@ -64,6 +68,7 @@ const handleDrag = (event, itemName) => {
       y >= logbookRect.top &&
       y <= logbookRect.bottom;
     if (itemName === "magnifyingGlass" && isOverLogbook) {
+      popopOpen.play()
        setPopupOpen(true);
     }
   };

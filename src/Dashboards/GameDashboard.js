@@ -5,11 +5,12 @@ import ScoreCard from './ScoreCard';
 const GameDashboard = () => {
   const navigate = useNavigate();
   const startGame = () => {
-    audio.play()
+    audioButton.play()
+    audioBackground.play()
     navigate('/puzzle1');
   };
-  let audio = new Audio('/HomePage.mp3')
-
+  let audioBackground = new Audio('/HomePage.mp3')
+  let audioButton = new Audio('/button_click.mp3')
   return (
     <div className="game-dashboard">
       <ScoreCard />   

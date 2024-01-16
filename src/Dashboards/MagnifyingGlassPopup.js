@@ -7,7 +7,10 @@ import { useScore } from '../Context/ScoreContext';
 const MagnifyingGlassPopup = () => {
   const navigate = useNavigate();
   const { score, increaseScore, resetScore, resetPuzzleHint } = useScore();
+  let audioButton = new Audio('/button_click.mp3')
+
   const pathToPuzzle2 = () => {
+    audioButton.play()
     navigate('/puzzle2');
     resetPuzzleHint()
     increaseScore()
@@ -15,6 +18,7 @@ const MagnifyingGlassPopup = () => {
   };
 
   const handleScoreBoardSubmit = (e) => {
+    audioButton.play()
     navigate('/')
     resetScore()
 }  
