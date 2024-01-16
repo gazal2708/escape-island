@@ -5,10 +5,10 @@ import ScoreCard from './ScoreCard';
 const GameDashboard = () => {
   const navigate = useNavigate();
   const startGame = () => {
-    // audio.play()
+    audio.play()
     navigate('/puzzle1');
   };
-  // let audio = new Audio('/HomePage.mp3')
+  let audio = new Audio('/HomePage.mp3')
 
   return (
     <div className="game-dashboard">
@@ -36,7 +36,6 @@ const GameDashboard = () => {
           <h2>Are You Ready to Begin?</h2>
           <button className='button' onClick={startGame}>Start Game</button>
           < div >
-      {/* <button className='button' onClick={start}>Play</button> */}
     </div >
         </div>
       </div>
