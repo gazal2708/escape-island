@@ -43,7 +43,6 @@ useEffect(() => {
             right: rect.right,
             bottom: rect.bottom,
           });
-        console.log(logbookRect)
       }
     };
   
@@ -54,7 +53,8 @@ useEffect(() => {
     return () => {
       window.removeEventListener('resize', updateLogbookRect);
     };
-  }, [logbookRect]);
+// eslint-disable-next-line
+  }, [logbookRef.current]);
 
 const handleDrag = (event, itemName) => {
     const { x, y } = event;

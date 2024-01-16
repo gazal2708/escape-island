@@ -23,6 +23,7 @@ const MagnifyingGlassPopup = () => {
       <div className="popup-content">
         <h3>VOILA! You opened a clue to your next puzzle:</h3>
         <p>"DIG UNDER THE TALLEST PALM TREE"</p>
+        <br />
         <button className="dialogButton1" onClick={pathToPuzzle2}>Proceed to next level</button>
         <button type="submit" className="pin-submit-button" onClick={handleScoreBoardSubmit}>End Game</button>
 
