@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useScore } from '../Context/ScoreContext';
 import { useHint } from '../Context/HintContext';
 import HintPopup from './HintPopup';
+import ScoreCard from './ScoreCard';
+
 const SecondPuzzleMystryBox = ({puzzleId}) => {
   const [isLoaded, setLoaded] = useState(false);
   const [isOverlayOpen, setOverlayOpen] = useState(false);
@@ -138,6 +140,7 @@ const SecondPuzzleMystryBox = ({puzzleId}) => {
 console.log(isOverlayOpen)
   return (
     <>
+          <ScoreCard />
       {/* Overlay with translucent white box */}
       {isOverlayOpen && (
           <div className="translucent-box3">

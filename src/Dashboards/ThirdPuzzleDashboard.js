@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/ThirdPuzzleDashboard.css';
+import ScoreCard from './ScoreCard';
 
 import { useNavigate } from 'react-router-dom';
 import { useScore } from '../Context/ScoreContext';
@@ -145,6 +146,7 @@ const handleScoreBoardSubmit = (e) => {
           onClick={handleBoatClick}
         >
       <div className={`puzzle3-dashboard ${isLoaded ? 'loaded' : ''}`}>
+      <ScoreCard textColor="white"/>
       </div>
       </div>
         

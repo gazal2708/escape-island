@@ -1,5 +1,5 @@
 // HintContext.js
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 
 const HintContext = createContext();
 

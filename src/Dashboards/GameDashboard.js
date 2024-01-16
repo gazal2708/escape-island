@@ -1,19 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/GameDashboard.css';
+import ScoreCard from './ScoreCard';
 const GameDashboard = () => {
   const navigate = useNavigate();
 
   const startGame = () => {
     navigate('/puzzle1');
   };
-
   return (
     <div className="game-dashboard">
+      <ScoreCard />   
       <div className="game-description">
+
         <h1>Welcome to "Escape the Mysterious Island"</h1>
         <div className="description-text">
           <p>
+
             You find yourself stranded on a remote, mysterious island, surrounded by lush greenery and the sound of crashing waves. The air is thick with a sense of adventure and a hint of something unknown. As you look around, you spot the wreckage of a ship on the shore, a testament to the perilous journey that brought you here.
           </p>
           <p>

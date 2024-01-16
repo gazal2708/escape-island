@@ -4,7 +4,9 @@ export const dragItem = (itemName, position) => ({
     payload: { itemName, position },
   });
 
-// export const openPopup = () => ({ type: 'OPEN_POPUP' });
-// export const closePopup = () => ({ type: 'CLOSE_POPUP' });
+export const setHintPopupStatus = (status) => ({
+    type: 'SET_HINT_POPUP_STATUS',
+    payload: status,
+  });
 
   

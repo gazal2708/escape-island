@@ -3,8 +3,6 @@
 import React from 'react';
 import '../Styles/FirstPuzzleDashboard.css'; 
 import DraggableItem from './DraggableItem';
-import { dragItem } from '../Store/actions';
-import { connect } from 'react-redux';
 import MagnifyingGlassPopup from './MagnifyingGlassPopup';
 import { useState } from 'react';
 import { useRef } from 'react';
@@ -12,22 +10,27 @@ import { useEffect } from 'react';
 import { useScore } from '../Context/ScoreContext';
 import HintPopup from './HintPopup';
 import { useHint } from '../Context/HintContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { setHintPopupStatus } from '../Store/actions';
+import ScoreCard from './ScoreCard';
+import '../Styles/ScoreCard.css'; 
 const FirstPuzzleDashboard = ({puzzleId}) => {
 const [isPopupOpen, setPopupOpen] = useState(false);
 const logbookRef = useRef(null);
 const [logbookRect, setLogbookRect] = useState(null);
-const [isHintPopupOpen, setHintPopupOpen] = useState(false);
 const { puzzleHint } = useScore();
 const { hints } = useHint();
 const currentHint = hints[puzzleId] || '';
+const dispatch = useDispatch();
+const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
 
 const handleOpenHintPopup = (e) => {
-  setHintPopupOpen(true);
+  dispatch(setHintPopupStatus(true));
   puzzleHint()
 };
 
 const handleCloseHintPopup = (e) => {
-  setHintPopupOpen(false);
+  dispatch(setHintPopupStatus(false));
 };
 
 useEffect(() => {
@@ -67,6 +70,7 @@ const handleDrag = (event, itemName) => {
 
   return (
     <div className="puzzle1-dashboard">
+      <ScoreCard textColor="black"/>
       <div className="translucent-box">
         <p className='puzzy1'>Unveiling the Hidden Path</p>
         <p className='puzzy1p'>
@@ -78,9 +82,11 @@ const handleDrag = (event, itemName) => {
         <p className='puzzy1p'>
           The cryptic nature of the message suggests that more lies beneath the surface. A spark of curiosity ignites within you as you ponder the meaning. It's a puzzle, a riddle waiting to be solved.
         </p>
-        <a href="#" onClick={handleOpenHintPopup}>
+        <div className='center'>
+        <a href="#" style={{color: 'white'}}onClick={handleOpenHintPopup}>
         Show Hint
         </a>
+        </div>
         {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
 
       </div>
@@ -99,10 +105,4 @@ const handleDrag = (event, itemName) => {
     </div>
   );
 };
-const mapStateToProps = (state) => ({
-    isPopupOpen: state.popupOpen,
-  });
-const mapDispatchToProps = {
-    dragItem,
-  };
-export default connect(mapStateToProps, mapDispatchToProps)(FirstPuzzleDashboard);
+export default FirstPuzzleDashboard;

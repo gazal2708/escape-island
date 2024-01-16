@@ -13,6 +13,11 @@
             [action.payload.itemName]: action.payload.position,
           },
         };
+      case 'SET_HINT_POPUP_STATUS':
+          return {
+            ...state,
+            isHintPopupOpen: action.payload,
+          };
       default:
         return state;
     }

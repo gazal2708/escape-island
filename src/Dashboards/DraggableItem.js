@@ -1,11 +1,10 @@
 // DraggableItem.js
 import React from 'react';
 import { useDrag } from 'react-dnd';
-import { connect } from 'react-redux';
 import { dragItem } from '../Store/actions';
-
+import { useDispatch } from 'react-redux';
 const DraggableItem = ({ itemName, onDrag }) => {
-
+  const dispatch = useDispatch();  
   const [{ isDragging }, drag] = useDrag({
     type: 'ITEM',
     item: { itemName },
@@ -19,7 +18,7 @@ const DraggableItem = ({ itemName, onDrag }) => {
         x: e.clientX,
         y: e.clientY,
       };
-      dragItem(itemName, newPosition);
+      dispatch(dragItem(itemName, newPosition));
       onDrag(newPosition, itemName);
   };
 
@@ -44,12 +43,4 @@ const DraggableItem = ({ itemName, onDrag }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-    position: state.draggedItems[ownProps.itemName],
-  });
-
-const mapDispatchToProps = {
-  dragItem,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(DraggableItem);
+export default DraggableItem;

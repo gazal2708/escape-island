@@ -1,7 +1,8 @@
 import React from 'react';
 import '../Styles/SecondPuzzleDashboard.css'; 
 import { useNavigate } from 'react-router-dom';
-
+import ScoreCard from './ScoreCard';
+import '../Styles/ScoreCard.css'; 
 const SecondPuzzleDashboard = ({puzzleId}) => {
     const navigate = useNavigate();
 
@@ -10,6 +11,7 @@ const SecondPuzzleDashboard = ({puzzleId}) => {
     };
   return (
     <div className="puzzle2-dashboard">
+      <ScoreCard />
       <div className="translucent-box2">
         <p className='puzzy2'>The suspicious treasure box and Torn Map</p>
         <p className='puzzy2p'>

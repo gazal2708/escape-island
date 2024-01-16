@@ -10,6 +10,7 @@
     margin: 0;
     position: relative;
     background-color: #61dafb;
+    /* justify-content: flex-start; */
   }
 
   body {
