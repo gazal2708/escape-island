@@ -22,13 +22,17 @@ User-Friendly Interface: The game features an intuitive and user-friendly interf
 Immersive Visuals: CSS styling create visually appealing scenes and animations, enhancing the gaming experience.
 Progressive Difficulty: Puzzle scenes are designed to gradually increase in complexity, providing a challenging yet enjoyable experience.
 
+## Future Enhancements
+  - Adding more puzzles and challenges
+  - Incorporating more object animations on UI pages
+  - Adding more advanced hooks to improvise user's browsing experience on UI
+
 ## Contribute
 Feel free to contribute to the game's development by providing feedback, reporting issues, or submitting pull requests. Let's work together to make Escape The Mysterious Island an even more thrilling adventure!
 
 Have fun playing and escaping the island! 🏝️🔍
 
-## Project setup
-
+## Project setup 
 
 ### `npm install`
 Installs dependencies
