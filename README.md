@@ -1,5 +1,3 @@
-# Escape The Mysterious Island - A React JS Game
-
 # Escape The Mysterious Island
 Welcome to Escape The Mysterious Island, a single-player game developed using ReactJS. This interactive adventure challenges your wit and problem-solving skills as you strive to escape from a stranded island filled with mysteries. Unravel the puzzles, decipher clues, and progress through the levels to secure your freedom.
 
