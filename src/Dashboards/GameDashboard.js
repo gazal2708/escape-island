@@ -8,7 +8,7 @@ const GameDashboard = () => {
     // audio.play()
     navigate('/puzzle1');
   };
-  let audio = new Audio('/HomePage.mp3')
+  // let audio = new Audio('/HomePage.mp3')
 
   return (
     <div className="game-dashboard">
