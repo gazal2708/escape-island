@@ -54,7 +54,7 @@ useEffect(() => {
     return () => {
       window.removeEventListener('resize', updateLogbookRect);
     };
-  }, [logbookRef.current]);
+  }, [logbookRect]);
 
 const handleDrag = (event, itemName) => {
     const { x, y } = event;
