@@ -1,23 +1,46 @@
-# Getting Started with Create React App
+# Escape The Mysterious Island - A React JS Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Escape The Mysterious Island
+Welcome to Escape The Mysterious Island, a single-player game developed using ReactJS. This interactive adventure challenges your wit and problem-solving skills as you strive to escape from a stranded island filled with mysteries. Unravel the puzzles, decipher clues, and progress through the levels to secure your freedom.
 
-## Available Scripts
+## Game Concept
+In Escape The Mysterious Island, players find themselves stuck on an enigmatic island. To escape, they must navigate through three intriguing puzzle scenes. Each scene presents unique challenges that require creative thinking and observation skills. The game's scoring system rewards players with points based on their progress—50 points for using hints and 100 points for solving puzzles independently.
 
-In the project directory, you can run:
+## Features
+Puzzle Scenes: Explore three captivating puzzle scenes designed to test your intellect and problem-solving abilities.
+On-Screen Clues: Gather clues and hints displayed on-screen to decipher puzzles and unlock the path to freedom.
+Scoring System: Earn points for every puzzle solved, with higher scores awarded for completing levels without hints.
+Technical Aspects
+Escape The Mysterious Island is built using ReactJS, Redux, and HTML5 concepts. The game leverages the power of React components for a dynamic and interactive user interface. Redux manages the state, ensuring a smooth flow of data and enabling score tracking throughout the game.
+
+## How to Play
+Start the Game: Click the "Start Game" button to begin your adventure.
+Navigate Puzzle Scenes: Explore each puzzle scene, interact with objects, and analyze on-screen clues.
+Solve Puzzles: Use your intellect to solve puzzles and progress through the levels.
+Earn Points: Score points for every successful puzzle completion, and challenge yourself to achieve the highest score.
+
+## Design Decisions
+User-Friendly Interface: The game features an intuitive and user-friendly interface for seamless gameplay.
+Immersive Visuals: CSS styling create visually appealing scenes and animations, enhancing the gaming experience.
+Progressive Difficulty: Puzzle scenes are designed to gradually increase in complexity, providing a challenging yet enjoyable experience.
+
+## Contribute
+Feel free to contribute to the game's development by providing feedback, reporting issues, or submitting pull requests. Let's work together to make Escape The Mysterious Island an even more thrilling adventure!
+
+Have fun playing and escaping the island! 🏝️🔍
+
+## Project setup
+
+
+### `npm install`
+Installs dependencies
 
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -27,44 +50,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed application link: [https://master--astonishing-figolla-c38216.netlify.app/] (Escape The Island Game)
