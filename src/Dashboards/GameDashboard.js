@@ -13,7 +13,7 @@ const GameDashboard = () => {
   let audioButton = new Audio('/button_click.mp3')
   return (
     <div className="game-dashboard">
-      <ScoreCard />   
+      <ScoreCard />
       <div className="game-description">
 
         <h1>Welcome to "Escape the Mysterious Island"</h1>
@@ -26,7 +26,7 @@ const GameDashboard = () => {
             Legend has it that this island holds secrets untold, and only the cleverest can escape its enigmatic grasp. The dense jungle hides ancient puzzles and challenges, leading to the ultimate path of liberation. Will you uncover the mysteries that bind you to this place and find your way back home?
           </p>
           <p>
-          This island is said to be guarded by puzzles, each more cunning than the last. Explore the depths of the jungle, unveil hidden clues, and solve the riddles that stand between you and freedom. The journey will test your wit, observation skills, and determination.
+            This island is said to be guarded by puzzles, each more cunning than the last. Explore the depths of the jungle, unveil hidden clues, and solve the riddles that stand between you and freedom. The journey will test your wit, observation skills, and determination.
           </p>
         </div>
         <div className="how-you-got-here">
@@ -37,7 +37,7 @@ const GameDashboard = () => {
           <h2>Are You Ready to Begin?</h2>
           <button className='button' onClick={startGame}>Start Game</button>
           < div >
-    </div >
+          </div >
         </div>
       </div>
     </div>

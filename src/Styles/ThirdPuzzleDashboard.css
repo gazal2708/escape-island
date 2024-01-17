@@ -5,13 +5,13 @@
   height: 100vh;
   z-index: 1;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   background: url('../public/puzzle2.png') no-repeat center center fixed;
   background-size: cover;
   flex-direction: column;
 }
 
-.caveWallImage{
+.caveWallImage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,11 +20,12 @@
   z-index: 1;
   margin-bottom: 5px;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   background: url('../public/wall.jpg') no-repeat center center fixed;
   background-size: cover;
-  flex-direction: column; 
+  flex-direction: column;
 }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -35,15 +36,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2; 
-  animation: fadeIn 0.5s ease-in-out; 
+  z-index: 2;
+  animation: fadeIn 0.5s ease-in-out;
 
 }
 
 .translucent-box4 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
-  color: #000; 
+  color: #000;
   max-height: 800px;
   max-width: 800px;
   position: absolute;
@@ -52,7 +53,7 @@
   transform: translate(-50%, -50%);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1; 
+  z-index: 1;
 }
 
 .close-icon {
@@ -66,7 +67,7 @@
 .pin-input-container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   max-width: 200px;
   margin: 0 auto;
 }
@@ -82,18 +83,24 @@
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
-  margin-right: 10px; 
+  margin-right: 10px;
   margin-bottom: 20px;
 }
+
 @keyframes shake {
-  0%, 100% {
-    transform: translateX(0); 
+
+  0%,
+  100% {
+    transform: translateX(0);
   }
-  25%, 75% {
-    transform: translateX(-10px); 
+
+  25%,
+  75% {
+    transform: translateX(-10px);
   }
+
   50% {
-    transform: translateX(10px); 
+    transform: translateX(10px);
   }
 }
 
@@ -106,6 +113,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -122,26 +130,26 @@
   background: url('../public/puzzle3.jpeg') no-repeat center center fixed;
   background-size: cover;
   flex-direction: column;
-  opacity: 0; 
-  transition: opacity 1s ease-in-out; 
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .puzzle3-dashboard.loaded {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .translucent-box2 {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px 20px 20px 20px;
   color: #ffffff;
-  max-width: 900px; 
+  max-width: 900px;
   box-sizing: border-box;
 }
 
 .puzzy2 {
   font-size: 2em;
   font-weight: bold;
-  margin: 0; 
+  margin: 0;
   padding: 0;
   word-wrap: break-word;
 }
@@ -154,7 +162,7 @@
 
 .dialogButton2 {
   font-size: 14px;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   background-color: #61dafb;
   color: #ffffff;
   border: none;
@@ -167,7 +175,7 @@
 
 .pin-submit-button {
   font-size: 14px;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   margin-bottom: 20px;
   background-color: #61dafb;
   color: #ffffff;

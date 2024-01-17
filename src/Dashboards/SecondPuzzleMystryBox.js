@@ -6,7 +6,7 @@ import { useHint } from '../Context/HintContext';
 import HintPopup from './HintPopup';
 import ScoreCard from './ScoreCard';
 
-const SecondPuzzleMystryBox = ({puzzleId}) => {
+const SecondPuzzleMystryBox = ({ puzzleId }) => {
   const [isLoaded, setLoaded] = useState(false);
   const [isOverlayOpen, setOverlayOpen] = useState(false);
   const [isMysteryBoxOverlayOpen, setMysteryBoxOverlayOpen] = useState(false);
@@ -36,7 +36,7 @@ const SecondPuzzleMystryBox = ({puzzleId}) => {
   };
   const navigate = useNavigate();
 
-  const correctPin = '1729'; 
+  const correctPin = '1729';
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoaded(true);
@@ -52,7 +52,7 @@ const SecondPuzzleMystryBox = ({puzzleId}) => {
     return () => clearTimeout(overlayTimeoutId);
   }, [isLoaded]);
 
-  if (isOverlayOpen){
+  if (isOverlayOpen) {
     popopOpen.play()
   }
   const handlePinChange = (index, value) => {
@@ -69,7 +69,7 @@ const SecondPuzzleMystryBox = ({puzzleId}) => {
     audioButton.play()
     navigate('/')
     resetScore()
-}  
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     audioButton.play()
@@ -104,10 +104,10 @@ const SecondPuzzleMystryBox = ({puzzleId}) => {
     const x = e.clientX;
     const y = e.clientY;
     // Check if the click is within the desired region
-    if (isClickWithinLockRegion(x, y)){
-        popopOpen.play()
-        setWrongInput(false)
-        setLockOverlayOpen(true)
+    if (isClickWithinLockRegion(x, y)) {
+      popopOpen.play()
+      setWrongInput(false)
+      setLockOverlayOpen(true)
     }
     else if (isClickWithinBoxRegion(x, y)) {
       popopOpen.play()
@@ -152,78 +152,78 @@ const SecondPuzzleMystryBox = ({puzzleId}) => {
   };
   return (
     <>
-          <ScoreCard />
+      <ScoreCard />
       {/* Overlay with translucent white box */}
       {isOverlayOpen && (
-          <div className="translucent-box3">
-            <span className="close-icon" onClick={closeOverlay}>
-              &#10006;
-            </span>
-            <p>
-              You did a good digging up work! Well done! But, oh no, the chest box is closed with a quite strong lock on it which can only be opened by entering a four-digit pin. Click on the box to proceed!
-            </p>
-          </div>
+        <div className="translucent-box3">
+          <span className="close-icon" onClick={closeOverlay}>
+            &#10006;
+          </span>
+          <p>
+            You did a good digging up work! Well done! But, oh no, the chest box is closed with a quite strong lock on it which can only be opened by entering a four-digit pin. Click on the box to proceed!
+          </p>
+        </div>
       )}
-            {/* Treasure box */}
-    {!(isMysteryBoxOverlayOpen && isLockOverlayOpen) && (
+      {/* Treasure box */}
+      {!(isMysteryBoxOverlayOpen && isLockOverlayOpen) && (
         <div
           className="treasure-box"
           onClick={handleTreasureBoxClick}
         >
-      <div className={`puzzlebox-dashboard ${isLoaded ? 'loaded' : ''}`}>
-      </div>
+          <div className={`puzzlebox-dashboard ${isLoaded ? 'loaded' : ''}`}>
+          </div>
         </div>
       )}
 
-{isMysteryBoxOverlayOpen && (
-          <div className="translucent-box3">
-            <span className="close-icon" onClick={closeMysteryBoxOverlay}>
-              &#10006;
-            </span>
-            <p>
-              Oh no! Box is closed. But hey! you can turn it upside down to read a secret message that can help you open it.
+      {isMysteryBoxOverlayOpen && (
+        <div className="translucent-box3">
+          <span className="close-icon" onClick={closeMysteryBoxOverlay}>
+            &#10006;
+          </span>
+          <p>
+            Oh no! Box is closed. But hey! you can turn it upside down to read a secret message that can help you open it.
             <br />
             <br />
-              <i>The message reads: "Imagine where number theory and taxi cabs intersect. Seek a number that connects cubes and the sum of cubes, bringing together mathematics and real-world anecdotes."</i>
-              <br />
-              <br />
-              Try your luck on the pin by clicking the lock on the chest!
-            </p>
-          </div>
+            <i>The message reads: "Imagine where number theory and taxi cabs intersect. Seek a number that connects cubes and the sum of cubes, bringing together mathematics and real-world anecdotes."</i>
+            <br />
+            <br />
+            Try your luck on the pin by clicking the lock on the chest!
+          </p>
+        </div>
       )}
 
-{isLockOverlayOpen && (
-          <div className="translucent-box3">
-            <span className="close-icon" onClick={closeLockOverlay}>
-              &#10006;
-            </span>
-                <p> Enter the 4 digit pin in below text box!</p>
-                <div className="pin-input-container">
-                <div className={`pin-input-form ${isShaking ? 'shake-animation' : ''}`}>
-        {pinInputs.map((value, index) => (
-          <input
-            key={index}
-            id={`pin-input-${index}`}
-            type="text"
-            value={value}
-            onChange={(e) => handlePinChange(index, e.target.value)}
-            maxLength="1"
-            className={`pin-input ${isWrongInput ? 'wrong-input' : 'right-input'}`}
-          />
-        ))}
-              </div>
-              <div className='center'>
-        <button className="open-hint-button" style={{color: 'black'}} onClick={handleOpenHintPopup}>
-        Show Hint
-        </button>
-        </div>
-      {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
+      {isLockOverlayOpen && (
+        <div className="translucent-box3">
+          <span className="close-icon" onClick={closeLockOverlay}>
+            &#10006;
+          </span>
+          <p> Enter the 4 digit pin in below text box!</p>
+          <div className="pin-input-container">
+            <div className={`pin-input-form ${isShaking ? 'shake-animation' : ''}`}>
+              {pinInputs.map((value, index) => (
+                <input
+                  key={index}
+                  id={`pin-input-${index}`}
+                  type="text"
+                  value={value}
+                  onChange={(e) => handlePinChange(index, e.target.value)}
+                  maxLength="1"
+                  className={`pin-input ${isWrongInput ? 'wrong-input' : 'right-input'}`}
+                />
+              ))}
+            </div>
+            <div className='center'>
+              <button className="open-hint-button" style={{ color: 'black' }} onClick={handleOpenHintPopup}>
+                Show Hint
+              </button>
+            </div>
+            {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
 
-        <button type="submit" className="pin-submit-button" onClick={handleSubmit}>Submit</button>
-        <button type="submit" className="pin-submit-button" onClick={handleScoreBoardSubmit}>End Game</button>
+            <button type="submit" className="pin-submit-button" onClick={handleSubmit}>Submit</button>
+            <button type="submit" className="pin-submit-button" onClick={handleScoreBoardSubmit}>End Game</button>
 
-        </div>
           </div>
+        </div>
       )}
     </>
   );

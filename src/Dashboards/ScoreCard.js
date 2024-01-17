@@ -6,7 +6,7 @@ const ScoreCard = (props) => {
   const { score } = useScore()
   return (
     <div className="scoreClass">
-        <h3 style={{color:props.textColor===undefined?"white":props.textColor}}>Score : {score}</h3>
+      <h3 style={{ color: props.textColor === undefined ? "white" : props.textColor }}>Score : {score}</h3>
     </div>
   );
 };

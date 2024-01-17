@@ -21,7 +21,7 @@ const MagnifyingGlassPopup = () => {
     audioButton.play()
     navigate('/')
     resetScore()
-}  
+  }
   return (
     <div className="popup-overlay">
       <div className="popup-content">

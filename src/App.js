@@ -11,15 +11,15 @@ function App() {
   return (
     <Router>
       <ScoreProvider>
-      <HintProvider>
-      <Routes>
-        <Route path="/" element={<GameDashboard />} />
-        <Route path="/puzzle1" element={<FirstPuzzleDashboard puzzleId={1}/>} />
-        <Route path="/puzzle2" element={<SecondPuzzleDashboard puzzleId={2}/>} />
-        <Route path="/puzzleBox" element={<SecondPuzzleMystryBox puzzleId={2}/>} />
-        <Route path="/puzzle3" element={<ThirdPuzzleDashboard puzzleId={3}/>} />
-      </Routes>
-      </HintProvider>
+        <HintProvider>
+          <Routes>
+            <Route path="/" element={<GameDashboard />} />
+            <Route path="/puzzle1" element={<FirstPuzzleDashboard puzzleId={1} />} />
+            <Route path="/puzzle2" element={<SecondPuzzleDashboard puzzleId={2} />} />
+            <Route path="/puzzleBox" element={<SecondPuzzleMystryBox puzzleId={2} />} />
+            <Route path="/puzzle3" element={<ThirdPuzzleDashboard puzzleId={3} />} />
+          </Routes>
+        </HintProvider>
       </ScoreProvider>
     </Router>
   );

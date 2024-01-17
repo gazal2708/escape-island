@@ -1,7 +1,7 @@
 // FirstPuzzleDashboard.js
 
 import React from 'react';
-import '../Styles/FirstPuzzleDashboard.css'; 
+import '../Styles/FirstPuzzleDashboard.css';
 import DraggableItem from './DraggableItem';
 import MagnifyingGlassPopup from './MagnifyingGlassPopup';
 import { useState } from 'react';
@@ -13,69 +13,69 @@ import { useHint } from '../Context/HintContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { setHintPopupStatus } from '../Store/actions';
 import ScoreCard from './ScoreCard';
-import '../Styles/ScoreCard.css'; 
-const FirstPuzzleDashboard = ({puzzleId}) => {
-const [isPopupOpen, setPopupOpen] = useState(false);
-const logbookRef = useRef(null);
-const [logbookRect, setLogbookRect] = useState(null);
-const { puzzleHint } = useScore();
-const { hints } = useHint();
-const currentHint = hints[puzzleId] || '';
-const dispatch = useDispatch();
-const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
-let hintButton = new Audio('/hint_click.mp3')
-let popopOpen = new Audio('/popup.mp3')
+import '../Styles/ScoreCard.css';
+const FirstPuzzleDashboard = ({ puzzleId }) => {
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const logbookRef = useRef(null);
+  const [logbookRect, setLogbookRect] = useState(null);
+  const { puzzleHint } = useScore();
+  const { hints } = useHint();
+  const currentHint = hints[puzzleId] || '';
+  const dispatch = useDispatch();
+  const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
+  let hintButton = new Audio('/hint_click.mp3')
+  let popopOpen = new Audio('/popup.mp3')
 
-const handleOpenHintPopup = (e) => {
-  hintButton.play()
-  dispatch(setHintPopupStatus(true));
-  puzzleHint()
-};
+  const handleOpenHintPopup = (e) => {
+    hintButton.play()
+    dispatch(setHintPopupStatus(true));
+    puzzleHint()
+  };
 
-const handleCloseHintPopup = (e) => {
-  hintButton.play()
-  dispatch(setHintPopupStatus(false));
-};
+  const handleCloseHintPopup = (e) => {
+    hintButton.play()
+    dispatch(setHintPopupStatus(false));
+  };
 
-useEffect(() => {
+  useEffect(() => {
     const updateLogbookRect = () => {
       if (logbookRef.current) {
         const rect = logbookRef.current.getBoundingClientRect();
         setLogbookRect({
-            top: rect.top,
-            left: rect.left,
-            right: rect.right,
-            bottom: rect.bottom,
-          });
+          top: rect.top,
+          left: rect.left,
+          right: rect.right,
+          bottom: rect.bottom,
+        });
       }
     };
-  
+
     updateLogbookRect();
-  
+
     window.addEventListener('resize', updateLogbookRect);
-  
+
     return () => {
       window.removeEventListener('resize', updateLogbookRect);
     };
-// eslint-disable-next-line
+    // eslint-disable-next-line
   }, [logbookRef.current]);
 
-const handleDrag = (event, itemName) => {
+  const handleDrag = (event, itemName) => {
     const { x, y } = event;
     const isOverLogbook =
-      x >= logbookRect.left-50 &&
-      x <= logbookRect.right-50 &&
+      x >= logbookRect.left - 50 &&
+      x <= logbookRect.right - 50 &&
       y >= logbookRect.top &&
       y <= logbookRect.bottom;
     if (itemName === "magnifyingGlass" && isOverLogbook) {
       popopOpen.play()
-       setPopupOpen(true);
+      setPopupOpen(true);
     }
   };
 
   return (
     <div className="puzzle1-dashboard">
-      <ScoreCard textColor="black"/>
+      <ScoreCard textColor="black" />
       <div className="translucent-box">
         <p className='puzzy1'>Unveiling the Hidden Path</p>
         <p className='puzzy1p'>
@@ -88,23 +88,23 @@ const handleDrag = (event, itemName) => {
           The cryptic nature of the message suggests that more lies beneath the surface. A spark of curiosity ignites within you as you ponder the meaning. It's a puzzle, a riddle waiting to be solved.
         </p>
         <div className='center'>
-        <button className="open-hint-button" style={{color: 'white'}} onClick={handleOpenHintPopup}>
-        Show Hint
-        </button>
+          <button className="open-hint-button" style={{ color: 'white' }} onClick={handleOpenHintPopup}>
+            Show Hint
+          </button>
         </div>
         {isHintPopupOpen && <HintPopup hint={currentHint} onClose={handleCloseHintPopup} />}
 
       </div>
-     <div className="image-container">
+      <div className="image-container">
         <div ref={logbookRef}>
-        <DraggableItem itemName="logbook" onDrag={handleDrag}/>
+          <DraggableItem itemName="logbook" onDrag={handleDrag} />
         </div>
 
         <DraggableItem itemName="matchbox" onDrag={handleDrag} />
-        <DraggableItem itemName="sword" onDrag={handleDrag}/>
+        <DraggableItem itemName="sword" onDrag={handleDrag} />
         <DraggableItem itemName="magnifyingGlass" onDrag={handleDrag} />
         {/* Popup */}
-      {isPopupOpen && <MagnifyingGlassPopup isPopupOpen={isPopupOpen} />}
+        {isPopupOpen && <MagnifyingGlassPopup isPopupOpen={isPopupOpen} />}
 
       </div>
     </div>

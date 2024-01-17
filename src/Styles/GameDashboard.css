@@ -1,142 +1,151 @@
-
-
 /* GameDashboard.css */
 
 .game-dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    position: relative;
-    background-color: #61dafb;
-    /* justify-content: flex-start; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  background-color: #61dafb;
+  /* justify-content: flex-start; */
+}
+
+body {
+  margin: 0px !important;
+}
+
+.game-dashboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../public/dashboardImage.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+h1,
+h2,
+.description-text p,
+.how-you-got-here,
+.button {
+  position: relative;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  color: #ffffff;
+}
+
+.game-dashboard:hover h1,
+.game-dashboard:hover h2,
+.game-dashboard:hover .description-text p,
+.game-dashboard:hover .how-you-got-here,
+.game-dashboard:hover .button {
+  opacity: 3;
+}
+
+
+.game-description {
+  max-width: 800px;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  overflow: visible;
+}
+
+.description-text {
+  overflow: visible;
+}
+
+.description-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  overflow: visible;
+}
+
+.how-you-got-here {
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.button {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #4fa3d1;
+}
+
+.game-dashboard {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
 
-  body {
-    margin: 0px !important;
-  }
-  
-  .game-dashboard::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../public/dashboardImage.jpg') no-repeat center center fixed;
-    background-size: cover;
+  to {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
   }
-  
-  h1, h2, .description-text p, .how-you-got-here, .button {
-    position: relative;
-    z-index: 5;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    color: #ffffff;
-  }
-  
-  .game-dashboard:hover h1,
-  .game-dashboard:hover h2,
-  .game-dashboard:hover .description-text p,
-  .game-dashboard:hover .how-you-got-here,
-  .game-dashboard:hover .button {
-    opacity: 3; 
-  }
-  
-  
-  .game-description {
-    max-width: 800px;
-    text-align: center;
-    overflow: hidden; 
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    overflow: visible;
-  }
-  
-  .description-text {
-    overflow: visible; 
-  }
-  
-  .description-text p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    overflow: visible;
-  }
-  
-  .how-you-got-here {
-    margin-top: 30px;
-  }
-  
-  h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  .button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    background-color: #61dafb;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #4fa3d1;
+}
+
+h1,
+.description-text p {
+  overflow: hidden;
+  animation: typing 4s ease-out forwards;
+}
+
+@keyframes typing {
+  from {
+    height: 0;
   }
 
-  .game-dashboard {
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
+  to {
+    height: 100%;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  h1, .description-text p {
-    overflow: hidden;
-    animation: typing 4s ease-out forwards;
-  }
-  
-  @keyframes typing {
-    from {
-      height: 0;
-    }
-    to {
-      height: 100%;
-    }
-  }
-  .how-you-got-here {
+}
+
+.how-you-got-here {
+  transform: translateY(0);
+  animation: float 2s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  from {
     transform: translateY(0);
-    animation: float 2s infinite alternate ease-in-out;
   }
-  
-  @keyframes float {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-10px);
-    }
+
+  to {
+    transform: translateY(-10px);
   }
-  .button {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .button:hover {
-    transform: scale(1.1);
-  }
+}
+
+.button {
+  transition: transform 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}

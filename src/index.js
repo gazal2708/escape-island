@@ -8,10 +8,10 @@ import store from './Store/store';
 import App from './App';
 ReactDOM.render(
   <React.StrictMode>
-  <DndProvider backend={HTML5Backend}>
-      <Provider store={store}> 
+    <DndProvider backend={HTML5Backend}>
+      <Provider store={store}>
         <App />
-     </Provider>
+      </Provider>
     </DndProvider>
   </React.StrictMode>,
   document.getElementById('root')

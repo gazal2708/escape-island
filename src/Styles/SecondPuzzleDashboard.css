@@ -25,171 +25,180 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-  body {
-    margin: 0px !important;
-  }
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2; 
-    animation: fadeIn 0.5s ease-in-out; 
+body {
+  margin: 0px !important;
+}
 
-  }
-  
-  .translucent-box3 {
-    background-color: rgba(255, 255, 255, 0.8); 
-    padding: 20px;
-    color: #000;
-    max-width: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1; 
-  }
-  
-  .close-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .pin-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    max-width: 200px; 
-    margin: 0 auto;
-  }
-  
-  .pin-input-form {
-    display: flex;
-  }
-  
-  .pin-input {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    margin-right: 10px; 
-    margin-bottom: 20px;
-  }
-  @keyframes shake {
-    0%, 100% {
-      transform: translateX(0); 
-    }
-    25%, 75% {
-      transform: translateX(-10px);
-    }
-    50% {
-      transform: translateX(10px); 
-    }
-  }
-  
-  .shake-animation {
-    animation: shake 0.5s ease-in-out;
-  }  
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .puzzlebox-dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    z-index: 0;
-    background: url('../public/treasurebox.jpg') no-repeat center center fixed;
-    background-size: cover;
-    flex-direction: column;
-    opacity: 0; 
-    transition: opacity 1s ease-in-out;
-  }
-  
-  .puzzlebox-dashboard.loaded {
-    opacity: 1; 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  animation: fadeIn 0.5s ease-in-out;
+
+}
+
+.translucent-box3 {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  color: #000;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.pin-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.pin-input-form {
+  display: flex;
+}
+
+.pin-input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
   }
 
-  .translucent-box2 {
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 20px 20px 20px 20px;
-    color: #ffffff;
-    max-width: 900px; 
-    box-sizing: border-box; 
+  25%,
+  75% {
+    transform: translateX(-10px);
   }
 
-  .puzzy2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0; 
-    padding: 0; 
-    word-wrap: break-word;
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
 
-  .puzzy2p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 15px;
+  to {
+    opacity: 1;
   }
+}
 
-  .dialogButton2 {
-    font-size: 14px;
-    padding: 10px 20px;
-    background-color: #61dafb;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease-in-out;
-  }
+.puzzlebox-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 0;
+  background: url('../public/treasurebox.jpg') no-repeat center center fixed;
+  background-size: cover;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
-  .pin-submit-button {
-    font-size: 14px;
-    padding: 10px 20px; 
-    margin-bottom: 20px;
+.puzzlebox-dashboard.loaded {
+  opacity: 1;
+}
 
-    background-color: #61dafb;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease-in-out;
-    width: 100%;
+.translucent-box2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 20px 20px 20px;
+  color: #ffffff;
+  max-width: 900px;
+  box-sizing: border-box;
+}
 
-  }
+.puzzy2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+}
 
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.puzzy2p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.dialogButton2 {
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pin-submit-button {
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+
+  background-color: #61dafb;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pin-input.wrong-input {
-    border-color: red;
-  }
+  border-color: red;
+}
 
-  .pin-input.right-input {
-    border-color: black;
-  }
+.pin-input.right-input {
+  border-color: black;
+}

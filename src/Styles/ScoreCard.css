@@ -1,12 +1,11 @@
-
-.scoreClass{
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    align-self: flex-start;
-    height:150px;
-    width: 150px;
-    text-align: center;
-    margin: 20px;
-    /* color: cyan; */
-  }
+.scoreClass {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  align-self: flex-start;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  margin: 20px;
+  /* color: cyan; */
+}
