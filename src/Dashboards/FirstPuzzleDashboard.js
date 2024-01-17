@@ -23,17 +23,17 @@ const FirstPuzzleDashboard = ({ puzzleId }) => {
   const currentHint = hints[puzzleId] || '';
   const dispatch = useDispatch();
   const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
-  let hintButton = new Audio('/hint_click.mp3')
-  let popopOpen = new Audio('/popup.mp3')
+  let hintButtonSound = new Audio('/hint_click.mp3')
+  let popopSound = new Audio('/popup.mp3')
 
   const handleOpenHintPopup = (e) => {
-    hintButton.play()
+    hintButtonSound.play()
     dispatch(setHintPopupStatus(true));
     puzzleHint()
   };
 
   const handleCloseHintPopup = (e) => {
-    hintButton.play()
+    hintButtonSound.play()
     dispatch(setHintPopupStatus(false));
   };
 
@@ -68,7 +68,7 @@ const FirstPuzzleDashboard = ({ puzzleId }) => {
       y >= logbookRect.top &&
       y <= logbookRect.bottom;
     if (itemName === "magnifyingGlass" && isOverLogbook) {
-      popopOpen.play()
+      popopSound.play()
       setPopupOpen(true);
     }
   };

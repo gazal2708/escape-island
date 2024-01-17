@@ -20,18 +20,19 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
   const [isHintPopupOpen, setHintPopupOpen] = useState(false);
   const [isShaking, setShaking] = useState(false);
   const currentHint = hints[puzzleId] || '';
-  let hintButton = new Audio('/hint_click.mp3')
-  let audioButton = new Audio('/button_click.mp3')
-  let popopOpen = new Audio('/popup.mp3')
+
+  let hintSound = new Audio('/hint_click.mp3')
+  let popupSound = new Audio('/popup.mp3')
+  let audioButtonSound = new Audio('/button_click.mp3')
 
   const handleOpenHintPopup = (e) => {
-    hintButton.play()
+    hintSound.play()
     setHintPopupOpen(true);
     puzzleHint()
   };
 
   const handleCloseHintPopup = (e) => {
-    hintButton.play()
+    hintSound.play()
     setHintPopupOpen(false);
   };
   const navigate = useNavigate();
@@ -55,11 +56,11 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
   }, [isLoaded]);
 
   if (isOverlayOpen) {
-    popopOpen.play()
+    popupSound.play()
   }
 
   const handleCaveExplore = (e) => {
-    popopOpen.play()
+    popupSound.play()
     setWallOpen(true)
     setBoatOverlayOpen(false)
   }
@@ -77,7 +78,7 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
 
     if (isClickWithinBoatRegion(x, y)) {
       setLoaded(true)
-      popopOpen.play()
+      popupSound.play()
       setBoatOverlayOpen(true);
     }
   };
@@ -85,7 +86,7 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    audioButton.play()
+    audioButtonSound.play()
     if (wordInput === correctMessage) {
       increaseScore();
       console.log("3", score)
@@ -113,31 +114,31 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
     return x >= regionLeft && x <= regionRight && y >= regionTop && y <= regionBottom;
   };
   const closeBoatOverlay = () => {
-    hintButton.play()
+    hintSound.play()
     setBoatOverlayOpen(false)
     setLoaded(true)
   };
 
   const closeWallOverlay = () => {
-    hintButton.play()
+    hintSound.play()
     setWallOpen(false)
     setLoaded(true)
   };
 
   const closeOverlay = () => {
-    hintButton.play()
+    hintSound.play()
     setOverlayOpen(false);
   };
 
   const handleScoreSubmit = (e) => {
     e.preventDefault();
-    audioButton.play()
+    audioButtonSound.play()
     setScoreBoardOpen(true)
     setFinalScreen(false)
   }
 
   const handleScoreBoardSubmit = (e) => {
-    audioButton.play()
+    audioButtonSound.play()
     navigate('/')
     resetScore()
   }

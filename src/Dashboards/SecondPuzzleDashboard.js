@@ -5,10 +5,10 @@ import ScoreCard from './ScoreCard';
 import '../Styles/ScoreCard.css';
 const SecondPuzzleDashboard = ({ puzzleId }) => {
   const navigate = useNavigate();
-  let audioButton = new Audio('/button_click.mp3')
+  let audioButtonSound = new Audio('/button_click.mp3')
 
   const pathToMystryBox = () => {
-    audioButton.play()
+    audioButtonSound.play()
     navigate('/puzzleBox');
   };
   return (

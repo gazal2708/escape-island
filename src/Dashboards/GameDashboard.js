@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import '../Styles/GameDashboard.css';
 import ScoreCard from './ScoreCard';
 const GameDashboard = () => {
+  let audioBackgroundSound = new Audio('/HomePage.mp3')
+  let audioButtonSound = new Audio('/button_click.mp3')
   const navigate = useNavigate();
   const startGame = () => {
-    audioButton.play()
-    audioBackground.play()
+    audioButtonSound.play()
+    audioBackgroundSound.play()
     navigate('/puzzle1');
   };
-  let audioBackground = new Audio('/HomePage.mp3')
-  let audioButton = new Audio('/button_click.mp3')
   return (
     <div className="game-dashboard">
       <ScoreCard />

@@ -17,26 +17,13 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
   const { score, increaseScore, resetScore, puzzleHint, resetPuzzleHint } = useScore();
   const { hints } = useHint();
   const [isHintPopupOpen, setHintPopupOpen] = useState(false);
-  let hintButton = new Audio('/hint_click.mp3')
-  let popopOpen = new Audio('/popup.mp3')
-
   const currentHint = hints[puzzleId] || '';
-  let audioButton = new Audio('/button_click.mp3')
-
-
-  const handleOpenHintPopup = (e) => {
-    hintButton.play()
-    setHintPopupOpen(true);
-    puzzleHint()
-  };
-
-  const handleCloseHintPopup = (e) => {
-    hintButton.play()
-    setHintPopupOpen(false);
-  };
-  const navigate = useNavigate();
-
   const correctPin = '1729';
+
+  let hintSound = new Audio('/hint_click.mp3')
+  let popupSound = new Audio('/popup.mp3')
+  let audioButtonSound = new Audio('/button_click.mp3')
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoaded(true);
@@ -53,8 +40,20 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
   }, [isLoaded]);
 
   if (isOverlayOpen) {
-    popopOpen.play()
+    popupSound.play()
   }
+  const handleOpenHintPopup = (e) => {
+    hintSound.play()
+    setHintPopupOpen(true);
+    puzzleHint()
+  };
+
+  const handleCloseHintPopup = (e) => {
+    hintSound.play()
+    setHintPopupOpen(false);
+  };
+  const navigate = useNavigate();
+
   const handlePinChange = (index, value) => {
     const newPinInputs = [...pinInputs];
     newPinInputs[index] = value;
@@ -66,13 +65,13 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
   };
 
   const handleScoreBoardSubmit = (e) => {
-    audioButton.play()
+    audioButtonSound.play()
     navigate('/')
     resetScore()
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    audioButton.play()
+    audioButtonSound.play()
     resetPuzzleHint()
 
     const enteredPin = pinInputs.join('');
@@ -105,12 +104,12 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
     const y = e.clientY;
     // Check if the click is within the desired region
     if (isClickWithinLockRegion(x, y)) {
-      popopOpen.play()
+      popupSound.play()
       setWrongInput(false)
       setLockOverlayOpen(true)
     }
     else if (isClickWithinBoxRegion(x, y)) {
-      popopOpen.play()
+      popupSound.play()
       setWrongInput(false)
       setMysteryBoxOverlayOpen(true);
     }
@@ -135,18 +134,18 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
   };
 
   const closeOverlay = () => {
-    hintButton.play()
+    hintSound.play()
     setOverlayOpen(false);
   };
 
   const closeMysteryBoxOverlay = () => {
-    hintButton.play()
+    hintSound.play()
     setMysteryBoxOverlayOpen(false)
     setLoaded(true)
   };
 
   const closeLockOverlay = () => {
-    hintButton.play()
+    hintSound.play()
     setLockOverlayOpen(false)
     setLoaded(true)
   };
