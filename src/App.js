@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GameDashboard from './Dashboards/GameDashboard';
-import FirstPuzzleDashboard from './Dashboards/FirstPuzzleDashboard';
-import SecondPuzzleDashboard from './Dashboards/SecondPuzzleDashboard';
-import SecondPuzzleMystryBox from './Dashboards/SecondPuzzleMystryBox';
-import ThirdPuzzleDashboard from './Dashboards/ThirdPuzzleDashboard';
+import GameDashboard from './Dashboards/GameDashboard/GameDashboard';
+import FirstPuzzleDashboard from './Dashboards/FirstPuzzleDashboard/FirstPuzzleDashboard';
+import SecondPuzzleDashboard from './Dashboards/SecondPuzzleDashboard/SecondPuzzleDashboard';
+import SecondPuzzleMystryBox from './Dashboards/SecondPuzzleDashboard/SecondPuzzleMystryBox';
+import ThirdPuzzleDashboard from './Dashboards/ThirdPuzzleDashboard/ThirdPuzzleDashboard';
 import { ScoreProvider } from './Context/ScoreContext';
 import { HintProvider } from './Context/HintContext';
 function App() {

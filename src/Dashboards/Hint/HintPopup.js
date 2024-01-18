@@ -1,6 +1,6 @@
 // HintPopup.js
 import React from 'react';
-import '../Styles/HintPopup.css';
+import './HintPopup.css';
 const HintPopup = ({ hint, onClose }) => {
   return (
     <div className="hint-popup">

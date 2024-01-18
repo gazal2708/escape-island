@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../Styles/SecondPuzzleDashboard.css';
+import './SecondPuzzleDashboard.css';
 import { useNavigate } from 'react-router-dom';
-import { useScore } from '../Context/ScoreContext';
-import { useHint } from '../Context/HintContext';
-import HintPopup from './HintPopup';
-import ScoreCard from './ScoreCard';
+import { useScore } from '../../Context/ScoreContext';
+import { useHint } from '../../Context/HintContext';
+import HintPopup from '../Hint/HintPopup';
+import ScoreCard from '../Score/ScoreCard';
 
 const SecondPuzzleMystryBox = ({ puzzleId }) => {
   const [isLoaded, setLoaded] = useState(false);

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import '../Styles/ThirdPuzzleDashboard.css';
-import ScoreCard from './ScoreCard';
+import './ThirdPuzzleDashboard.css';
+import ScoreCard from '../Score/ScoreCard';
 
 import { useNavigate } from 'react-router-dom';
-import { useScore } from '../Context/ScoreContext';
-import { useHint } from '../Context/HintContext';
-import HintPopup from '../Dashboards/HintPopup';
+import { useScore } from '../../Context/ScoreContext';
+import { useHint } from '../../Context/HintContext';
+import HintPopup from '../Hint/HintPopup';
 const ThirdPuzzleDashboard = ({ puzzleId }) => {
   const [isLoaded, setLoaded] = useState(false);
   const [isOverlayOpen, setOverlayOpen] = useState(false);

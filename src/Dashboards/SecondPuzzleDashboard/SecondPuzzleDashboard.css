@@ -3,27 +3,30 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  z-index: 1;
-  position: relative;
+  margin: 0;
   overflow: hidden;
-  background: url('../public/puzzle2.png') no-repeat center center fixed;
+  background: url('../../public/puzzle2.png') no-repeat center center fixed;
   background-size: cover;
   flex-direction: column;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
 
-.caveWallImage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 600px;
-  z-index: 1;
-  margin-bottom: 5px;
-  position: relative;
-  overflow: hidden;
-  background: url('../public/wall.jpg') no-repeat center center fixed;
-  background-size: cover;
-  flex-direction: column;
+.puzzle2-dashboard::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body {
+  margin: 0px !important;
 }
 
 .overlay {
@@ -41,12 +44,11 @@
 
 }
 
-.translucent-box4 {
+.translucent-box3 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   color: #000;
-  max-height: 800px;
-  max-width: 800px;
+  max-width: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -108,7 +110,6 @@
   animation: shake 0.5s ease-in-out;
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -119,22 +120,20 @@
   }
 }
 
-.puzzle3-dashboard {
+.puzzlebox-dashboard {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   z-index: 0;
-  position: relative;
-  overflow: hidden;
-  background: url('../public/puzzle3.jpeg') no-repeat center center fixed;
+  background: url('../../public/treasurebox.jpg') no-repeat center center fixed;
   background-size: cover;
   flex-direction: column;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.puzzle3-dashboard.loaded {
+.puzzlebox-dashboard.loaded {
   opacity: 1;
 }
 
@@ -177,6 +176,7 @@
   font-size: 14px;
   padding: 10px 20px;
   margin-bottom: 20px;
+
   background-color: #61dafb;
   color: #ffffff;
   border: none;
@@ -193,7 +193,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .pin-input.wrong-input {
@@ -202,8 +201,4 @@
 
 .pin-input.right-input {
   border-color: black;
-}
-
-body {
-  margin: 0px !important;
 }

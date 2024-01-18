@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Styles/ScoreCard.css';
-import { useScore } from '../Context/ScoreContext';
+import './ScoreCard.css';
+import { useScore } from '../../Context/ScoreContext';
 const ScoreCard = (props) => {
 
   const { score } = useScore()

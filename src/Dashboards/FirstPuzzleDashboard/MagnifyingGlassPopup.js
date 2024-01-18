@@ -1,7 +1,7 @@
 // MagnifyingGlassPopup.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useScore } from '../Context/ScoreContext';
+import { useScore } from '../../Context/ScoreContext';
 
 
 const MagnifyingGlassPopup = () => {

@@ -1,7 +1,7 @@
 // DraggableItem.js
 import React from 'react';
 import { useDrag } from 'react-dnd';
-import { dragItem } from '../Store/actions';
+import { dragItem } from '../../Store/actions';
 import { useDispatch } from 'react-redux';
 const DraggableItem = ({ itemName, onDrag }) => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const DraggableItem = ({ itemName, onDrag }) => {
           cursor: 'move',
           width: '100px',
           height: '100px',
-          backgroundImage: `url(${require(`../public/${itemName}.png`)})`,
+          backgroundImage: `url(${require(`../../public/${itemName}.png`)})`,
           backgroundSize: 'cover',
           margin: '0 10px',
           backgroundColor: 'rgba(255, 0, 0, 0.2)',

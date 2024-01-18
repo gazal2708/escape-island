@@ -1,19 +1,19 @@
 // FirstPuzzleDashboard.js
 
 import React from 'react';
-import '../Styles/FirstPuzzleDashboard.css';
+import './FirstPuzzleDashboard.css';
 import DraggableItem from './DraggableItem';
 import MagnifyingGlassPopup from './MagnifyingGlassPopup';
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
-import { useScore } from '../Context/ScoreContext';
-import HintPopup from './HintPopup';
-import { useHint } from '../Context/HintContext';
+import { useScore } from '../../Context/ScoreContext';
+import HintPopup from '../Hint/HintPopup';
+import { useHint } from '../../Context/HintContext';
 import { useDispatch, useSelector } from 'react-redux';
-import { setHintPopupStatus } from '../Store/actions';
-import ScoreCard from './ScoreCard';
-import '../Styles/ScoreCard.css';
+import { setHintPopupStatus } from '../../Store/actions';
+import ScoreCard from '../Score/ScoreCard';
+import '../Score/ScoreCard.css';
 const FirstPuzzleDashboard = ({ puzzleId }) => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const logbookRef = useRef(null);

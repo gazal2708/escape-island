@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Styles/GameDashboard.css';
-import ScoreCard from './ScoreCard';
+import './GameDashboard.css';
+import ScoreCard from '../Score/ScoreCard';
 const GameDashboard = () => {
   let audioBackgroundSound = new Audio('/HomePage.mp3')
   let audioButtonSound = new Audio('/button_click.mp3')
