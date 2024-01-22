@@ -9,3 +9,8 @@ export const setHintPopupStatus = (status) => ({
   payload: status,
 });
 
+export const setHint = (id) => ({
+  type: 'SET_HINT',
+  payload: id,
+});
+

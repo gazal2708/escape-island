@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './SecondPuzzleDashboard.css';
 import { useNavigate } from 'react-router-dom';
 import { useScore } from '../../Context/ScoreContext';
-import { useHint } from '../../Context/HintContext';
 import HintPopup from '../Hint/HintPopup';
 import ScoreCard from '../Score/ScoreCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { setHintPopupStatus, setHint } from '../../Store/actions';
 
 const SecondPuzzleMystryBox = ({ puzzleId }) => {
   const [isLoaded, setLoaded] = useState(false);
@@ -15,9 +16,9 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
   const [isShaking, setShaking] = useState(false);
   const [isWrongInput, setWrongInput] = useState(false);
   const { score, increaseScore, resetScore, puzzleHint, resetPuzzleHint } = useScore();
-  const { hints } = useHint();
-  const [isHintPopupOpen, setHintPopupOpen] = useState(false);
-  const currentHint = hints[puzzleId] || '';
+  const dispatch = useDispatch();
+  const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
+  const currentHint = useSelector((state) => state.hint)
   const correctPin = '1729';
 
   let hintSound = new Audio('/hint_click.mp3')
@@ -44,13 +45,14 @@ const SecondPuzzleMystryBox = ({ puzzleId }) => {
   }
   const handleOpenHintPopup = (e) => {
     hintSound.play()
-    setHintPopupOpen(true);
+    dispatch(setHintPopupStatus(true));
+    dispatch(setHint(puzzleId))
     puzzleHint()
   };
 
   const handleCloseHintPopup = (e) => {
     hintSound.play()
-    setHintPopupOpen(false);
+    dispatch(setHintPopupStatus(false));
   };
   const navigate = useNavigate();
 

@@ -9,9 +9,8 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useScore } from '../../Context/ScoreContext';
 import HintPopup from '../Hint/HintPopup';
-import { useHint } from '../../Context/HintContext';
 import { useDispatch, useSelector } from 'react-redux';
-import { setHintPopupStatus } from '../../Store/actions';
+import { setHintPopupStatus, setHint } from '../../Store/actions';
 import ScoreCard from '../Score/ScoreCard';
 import '../Score/ScoreCard.css';
 const FirstPuzzleDashboard = ({ puzzleId }) => {
@@ -19,16 +18,16 @@ const FirstPuzzleDashboard = ({ puzzleId }) => {
   const logbookRef = useRef(null);
   const [logbookRect, setLogbookRect] = useState(null);
   const { puzzleHint } = useScore();
-  const { hints } = useHint();
-  const currentHint = hints[puzzleId] || '';
   const dispatch = useDispatch();
   const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
+  const currentHint = useSelector((state) => state.hint)
   let hintButtonSound = new Audio('/hint_click.mp3')
   let popopSound = new Audio('/popup.mp3')
 
   const handleOpenHintPopup = (e) => {
     hintButtonSound.play()
     dispatch(setHintPopupStatus(true));
+    dispatch(setHint(puzzleId))
     puzzleHint()
   };
 

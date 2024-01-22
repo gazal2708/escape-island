@@ -3,7 +3,7 @@ import './SecondPuzzleDashboard.css';
 import { useNavigate } from 'react-router-dom';
 import ScoreCard from '../Score/ScoreCard';
 import '../Score/ScoreCard.css';
-const SecondPuzzleDashboard = ({ puzzleId }) => {
+const SecondPuzzleDashboard = () => {
   const navigate = useNavigate();
   let audioButtonSound = new Audio('/button_click.mp3')
 

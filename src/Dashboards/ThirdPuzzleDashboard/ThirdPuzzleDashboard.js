@@ -4,8 +4,10 @@ import ScoreCard from '../Score/ScoreCard';
 
 import { useNavigate } from 'react-router-dom';
 import { useScore } from '../../Context/ScoreContext';
-import { useHint } from '../../Context/HintContext';
 import HintPopup from '../Hint/HintPopup';
+import { useDispatch, useSelector } from 'react-redux';
+import { setHintPopupStatus, setHint } from '../../Store/actions';
+
 const ThirdPuzzleDashboard = ({ puzzleId }) => {
   const [isLoaded, setLoaded] = useState(false);
   const [isOverlayOpen, setOverlayOpen] = useState(false);
@@ -16,10 +18,10 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
   const [isFinalScreen, setFinalScreen] = useState(false)
   const [isScoreBoardOpen, setScoreBoardOpen] = useState(false)
   const { score, increaseScore, resetScore, resetPuzzleHint, puzzleHint } = useScore();
-  const { hints } = useHint();
-  const [isHintPopupOpen, setHintPopupOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isHintPopupOpen = useSelector((state) => state.isHintPopupOpen);
+  const currentHint = useSelector((state) => state.hint)
   const [isShaking, setShaking] = useState(false);
-  const currentHint = hints[puzzleId] || '';
 
   let hintSound = new Audio('/hint_click.mp3')
   let popupSound = new Audio('/popup.mp3')
@@ -27,13 +29,14 @@ const ThirdPuzzleDashboard = ({ puzzleId }) => {
 
   const handleOpenHintPopup = (e) => {
     hintSound.play()
-    setHintPopupOpen(true);
+    dispatch(setHintPopupStatus(true));
+    dispatch(setHint(puzzleId))
     puzzleHint()
   };
 
   const handleCloseHintPopup = (e) => {
     hintSound.play()
-    setHintPopupOpen(false);
+    dispatch(setHintPopupStatus(false));
   };
   const navigate = useNavigate();
 

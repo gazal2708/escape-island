@@ -1,7 +1,12 @@
 // reducers.js
-// const initialState = {
-//   draggedItems: {},
-// };
+const initialState = {
+  // draggedItems: {},
+  isHintPopupOpen: false,
+  hint: ''
+};
+
+const hints = { 1: "See if you can drag something over the logbook", 2: "Do you know that the sum of cube roots of 1 and 12, 9 and 10 are equal?", 3: "Can you decode binary code to text?" }
+
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -18,6 +23,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         isHintPopupOpen: action.payload,
       };
+    case 'SET_HINT':
+      return {
+        ...state,
+        hint: hints[action.payload],
+      }
     default:
       return state;
   }
