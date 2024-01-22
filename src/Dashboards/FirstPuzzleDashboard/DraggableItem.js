@@ -18,7 +18,7 @@ const DraggableItem = ({ itemName, onDrag }) => {
       x: e.clientX,
       y: e.clientY,
     };
-    dispatch(dragItem(itemName, newPosition));
+    // dispatch(dragItem(itemName, newPosition));
     onDrag(newPosition, itemName);
   };
 
