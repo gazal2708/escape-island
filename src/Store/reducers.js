@@ -1,7 +1,7 @@
 // reducers.js
-const initialState = {
-  draggedItems: {},
-};
+// const initialState = {
+//   draggedItems: {},
+// };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
